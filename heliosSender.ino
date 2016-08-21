@@ -113,20 +113,21 @@ void lighting() {
       digitalWrite(analogPins[i], LOW);
     }
   }
+  
   if (digitalRead(runLightingPin) == LOW) {
-    sendData(100+lightingProgram);
+    sendData(20+lightingProgram);
   }
   if (digitalRead(pauseLightingPin) == LOW) {
-    sendData(110);
+    sendData(31);
   }
   if (digitalRead(stopLightingPin) == LOW) {
-    sendData(111);
+    sendData(32);
   }
   if (digitalRead(functionPinA) == LOW) {
-    sendData(112);
+    sendData(33);
   }
   if (digitalRead(functionPinB) == LOW) {
-    sendData(113);
+    sendData(34);
   }
 }
 
