@@ -77,7 +77,9 @@ void immediateTorch() {
 }
 
 void chase() {
-  if (analogRead(1) < 1013) {
+  //don't start chasing at <1024 -- this will cause false positievs due to cheap/worn out pots.  
+  //Make them twist the pot a bit before it starts doing anything.
+  if (analogRead(1) < 900) {
     chaseSpeed = map(analogRead(1), 1024, 0, 500, 80);
     if (millis() > nextChase) {
       if (chaseSpeed == 80) {
